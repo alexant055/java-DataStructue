@@ -2,11 +2,13 @@ package udemy;
 
 public class Recursion {
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
+        int[] array = {10, 20, 5, 6, 7, 2, 3, 56, 34, 45, 32};
         printRecursive(5);
         System.out.println("Sum: " + sum(10));
         System.out.println("Factorial value: " + factorial(10)); // 10! or n!
         System.out.println("Fibonacci Series: " + fibonacci(10));
+        System.out.println("Find Biggest number: " + findBiggestNumber(array));
 
     }
 
@@ -30,7 +32,12 @@ public class Recursion {
 
     private static int fibonacci(int range) {
         if (range < 1) return 0;
-        else if (1 <= range && range <= 2) return range - 1;
+        else if (range <= 2) return range - 1;
         else return (fibonacci(range - 1) + fibonacci(range - 2));
+    }
+
+    private static int findBiggestNumber(int[] array) {
+
+        return array[array.length - 1];
     }
 }
